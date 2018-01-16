@@ -1,10 +1,13 @@
 ---
 applications:
  - name: clientcredentials-sample
-   memory: 1G
+   memory: 768M
+   disk_quota: 512M
    instances: 1
-   buildpack: java_buildpack
+   buildpack: java_buildpack_offline
    path: build/libs/client_credentials.jar
+   services:
+   - MvpTimeSSO
    env:
      SKIP_SSL_VALIDATION: "true"
 
