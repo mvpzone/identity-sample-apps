@@ -1,10 +1,11 @@
 ---
 applications:
- - name: resource-server-sample
-   memory: 1G
+ - name: todo-resource-server
+   memory: 768M
+   disk_quota: 512M
    instances: 1
-   buildpack: java_buildpack
+   buildpack: java_buildpack_offline
    path: build/libs/resource-server.jar
    env:
      SKIP_SSL_VALIDATION: "true"
-     AUTH_SERVER: https://<plan-auth-domain>.login.<your-domain>.com
+     AUTH_SERVER: https://sso.login.sys.cf.cirrus.labs.mvptime.org
